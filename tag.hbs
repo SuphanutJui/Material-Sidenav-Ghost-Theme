@@ -1,0 +1,70 @@
+{{!< default}}
+
+{{!Tag Title}}
+    <div class="tag-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2><i class="fa fa-hashtag" aria-hidden="true"></i> Tag: {{tag.name}}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+    {{#foreach posts}}
+        <main class="row">
+           
+            <article class="front-wrapper col-md-8 col-md-offset-2 jumbotron animated" role="article">
+                       
+                <div class="cover-area"> {{!cover image}}
+                    <div class="cover-img">
+                        <a href="{{url}}"><img src="{{image}}"></a>
+                    </div>
+                </div>
+                
+                <div class="front-post">
+                    <div class="container-fluid">
+                        <div class="row">
+                           
+                            <div class="front-post-content">
+                                <div class="front-post-wrapper">
+                                    <div class="front-post-header">
+                                        <div class="front-post-meta"> {{!post meta}}
+                                            <div class="front-post-tag">
+                                                <i class="fa fa-hashtag" aria-hidden="true"></i>
+                                                {{#foreach tags}}
+                                                <a href="{{url}}" title="{{name}}">{{name}}</a>
+                                                {{/foreach}}
+                                            </div>
+                                            {{!time}}
+                                            <time class="front-post-date" datetime="{{date format='YYYY-MM-DD'}}"><i class="material-icons">&#xE192;</i> 
+                                            {{date format='YYYY-MM-DD'}}
+                                            </time>
+                                        </div>
+                                        <h2 class="front-post-title" itemprop="headline">
+                                            <a href="{{url}}">{{title}}</a>
+                                        </h2>
+                                    </div>
+                                    <div class="front-post-p"> {{!post description}}
+                                        <p>
+                                            {{excerpt words="50"}}&hellip;
+                                        </p>
+                                    </div>
+                                    <div class="front-post-more"> {{! Read more Button}}
+                                        <a href="{{url}}" class="btn btn-raised btn-primary right">
+                                        Read more
+                                        <div class="ripple-container"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div> {{! end of front-post}}
+                
+            </article>
+            
+        </main>
+    {{/foreach}}
+    </div> {{!end of container}}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       {{!responsive and meta tags}}
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8" />
+        <meta name="author" content="">
+        {{!title}}
+        <title>{{meta_title}}</title>
+        <meta name="description" content="{{meta_description}}" />
+        <meta name="theme-color" content="#263238">
+        {{!style}}
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href='https://fonts.googleapis.com/css?family=Kanit:300&subset=thai,latin' rel='stylesheet' type='text/css'>
+        <link href="{{asset "assets/css/bootstrap.min.css"}}" rel="stylesheet">
+        <link href="{{asset "assets/css/jasny-bootstrap.min.css"}}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{asset "assets/css/bootstrap-material-design.min.css"}}">
+        <link rel="stylesheet" type="text/css" href="{{asset "assets/css/ripples.min.css"}}">
+        <link rel="stylesheet" type="text/css" href="{{asset "assets/css/font-awesome.min.css"}}">
+        <link rel="stylesheet" type="text/css" href="{{asset "assets/css/animate.min.css"}}">
+        
+        <!-- Custom styles for this template -->
+        <link href="{{asset "assets/css/style.min.css"}}" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        {{! Ghost header injection }}
+        {{ghost_head}}
+    </head>
+
+
+    <body class="{{body_class}}">
+    
+    {{! Blog navbar }}
+        <div class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
+            <div class="nav-wrapper container">
+               {{!Title at Navbar}}
+                <div class="animated fadeInLeft">
+                    <a class="navmenu-brand" href="{{@blog.url}}"><h1>{{@blog.title}}</h1></a>
+                    <p>{{@blog.description}}</p>
+                </div>
+                <div class="animated fadeIn">
+                    <ul class="nav navmenu-nav">
+                       {{!Nav Button}}
+                        <li class="btn"><a href="{{@blog.url}}"><i class="material-icons">home</i> Home</a></li>
+                        <li class="btn"><a href=""><i class="material-icons">person</i> Profile</a></li>
+                    </ul>
+                    <div class="navmenu-social">
+                       {{!Nav Social Button}}
+                        <a href="https://www.facebook.com/suphanutjui" class="btn btn-default btn-fab">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.twitter.com/SuphanutJui" class="btn btn-default btn-fab">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="mailto:suphanutjui@gmail.com" class="btn btn-default btn-fab">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/SuphanutJui" class="btn btn-default btn-fab">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{!Mobile Navbar (fixed top)}}
+        <div class="navbar navbar-default navbar-fixed-top hidden-md hidden-lg">
+            <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">{{@blog.title}}</a>
+        </div>
+
+    {{! Content }}
+    {{{ body }}}
+
+    {{! Footer }}
+        <footer class="container-fluid">
+            <div class="row">
+                <button data-toggle="collapse" data-target="#fCollapse" class="btn btn-footer btn-raised btn-primary">MORE ↓</button>
+                <div id="fCollapse" class="footer-collapse collapse">
+                    <div class="col-md-4">
+                        <h3>{{@blog.title}}</h3>
+                        <p>{{@blog.description}}</p>
+                    </div>
+                    {{!Tag Cloud}}
+                    <div class="col-md-4">
+                        <h3><i class="fa fa-hashtag" aria-hidden="true"></i> Tags</h3>
+                        <ul>
+                            {{#get "tags" limit="all" include="count.posts" order="count.posts desc"}}
+                            {{#foreach tags}}
+                            <li><a href="/tag/{{slug}}" title="{{name}}">{{name}}</a></li>
+                            {{/foreach}}
+                            {{/get}}
+                        </ul>
+                    </div>
+                    {{!Twitter Embed}}
+                    <div class="col-md-4">
+                        <h3><i class="fa fa-twitter" aria-hidden="true"></i> Twitter !EDIT IT</h3>
+                        <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/SuphanutJui" data-widget-id="728460610090893313">Tweets by @SuphanutJui</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>        
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="left">
+                        <a href="http://creativecommons.org/licenses/by-sa/4.0/">
+                              Creative Commons BY-SA 4.0
+                        </a> - 2016
+                    </div>
+                    <div class="right">Powered by <a href="https://ghost.org/">Ghost</a>
+                    <span>Theme <a href="https://github.com/SuphanutJui/Material-Sidenav-Ghost-Theme">Material Sidenav</a></span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    {{! Scripts }}
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="{{asset "assets/js/bootstrap.min.js"}}"></script>
+        <script src="{{asset "assets/js/jasny-bootstrap.min.js"}}"></script>
+        <script src="{{asset "assets/js/material.min.js"}}"></script>
+        <script src="{{asset "assets/js/ripples.min.js"}}"></script>
+        <script src="{{asset "assets/js/script.min.js"}}"></script>
+        <script>$.material.init()</script>
+      
+    {{! Ghost body injection }}
+    {{ghost_foot}}
+
+  </body>
+</html>

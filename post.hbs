@@ -1,0 +1,85 @@
+{{!< default }}
+{{#post}}
+
+
+{{!container}}
+        <div class="container-fluid">
+            
+<main class="row">
+                <article class="post-wrapper col-md-10 col-md-offset-1 jumbotron">
+                    
+                    <div class="cover-area">
+                        <h2 class="post-title animated fadeInDown">
+                        {{title}}
+                        </h2>
+                        <div class="cover-img">
+                            <img src="{{image}}">
+                        </div>
+                    </div>
+
+                    <div class="post">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="post-content">
+                                    <div class="post-wrapper">
+                                        <div class="post-header">
+                                            <div class="post-meta">
+                                                <div class="post-tag">
+                                                    <i class="fa fa-hashtag" aria-hidden="true"></i>
+                                                    {{#foreach tags}}
+                                                    <a href="{{url}}" title="{{name}}">{{name}}</a>
+                                                    {{/foreach}}
+                                                </div>
+                                                <time class="front-post-date" datetime="{{date format='YYYY-MM-DD'}}"><i class="material-icons">&#xE192;</i> {{date format='YYYY-MM-DD'}}</time>
+                                            </div>
+                                        </div>
+                                        <div class="post-p">
+                                            {{content}}
+                                        </div>
+                                        <hr>
+                                        <div class="post-share btn-group-sm">
+                                            <h3><i class="material-icons">share</i> Share this:</h3>
+                                            <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" class="btn btn-default btn-fab fb intent" data-width="580" height="235">
+                                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                                <div class="ripple-container"></div>
+                                            </a>
+                                            <a href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}" class="btn btn-default btn-fab tw intent" data-width="550" data-height="235">
+                                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                                                <div class="ripple-container"></div>
+                                            </a>
+                                            <a href="https://plus.google.com/share?url={{url absolute="true"}}" class="btn btn-default btn-fab gp intent" data-width="590" data-height="530">
+                                                <i class="fa fa-google-plus" aria-hidden="true"></i>
+                                                <div class="ripple-container"></div>
+                                            </a>
+                                        </div>
+                                        <style>
+                                        <div class="post-comment"> {{!Facebook Comment Box}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </main>
+                
+{{!navpage}}
+<div class="row post-navigation">
+                <div class="col-md-10 col-md-offset-1 btn-group-sm">
+                    {{#next_post}}
+                    <a href="{{url}}" class="left">
+                        <button class="btn btn-primary btn-fab">
+                            <i class="material-icons">arrow_back</i>
+                        </button>
+                          Newer                    </a>{{/next_post}}
+                    {{#prev_post}}<a href="{{url}}" class="right">
+                          Older
+                        <button class="btn btn-primary btn-fab">
+                            <i class="material-icons">arrow_forward</i>
+                        </button>
+                    </a>{{/prev_post}}
+                </div>
+            </div>
+        </div>
+
+{{/post}}

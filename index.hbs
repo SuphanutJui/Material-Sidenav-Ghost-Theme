@@ -1,0 +1,64 @@
+{{!< default }}
+
+{{!container}}
+<div class="container-fluid">
+{{! Blog content }}
+{{#foreach posts}}
+    <main class="row">
+        <article class="front-wrapper col-md-8 col-md-offset-2 jumbotron animated" role="article">
+          
+           {{!Cover Image}}
+            <div class="cover-area">
+                <div class="cover-img">
+                    <a href="{{url}}"><img src="{{image}}"></a>
+                </div>
+            </div>
+            <div class="front-post">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="front-post-content">
+                            <div class="front-post-wrapper">
+                                <div class="front-post-header">
+                                   {{!post meta (time posted, tags)}}
+                                    <div class="front-post-meta">
+                                        <div class="front-post-tag">
+                                           {{!hashtag icon}}
+                                            <i class="fa fa-hashtag" aria-hidden="true"></i>
+                                            {{!foreach tags}}
+                                            {{#foreach tags}}
+                                            <a href="{{url}}" title="{{name}}">{{name}}</a>
+                                            {{/foreach}}
+                                        </div>
+                                        <time class="front-post-date" datetime="{{date format='YYYY-MM-DD'}}">
+                                        <i class="material-icons">&#xE192;</i> 
+                                        {{date format='YYYY-MM-DD'}}
+                                        </time>
+                                    </div>
+                                    {{!Title}}
+                                    <h2 class="front-post-title" itemprop="headline">
+                                        <a href="{{url}}">{{title}}</a>
+                                    </h2>
+                                </div>
+                                {{!Post Description (Word Limit 50)}}
+                                <div class="front-post-p">
+                                    <p>
+                                        {{excerpt words="50"}}&hellip;
+                                    </p>
+                                </div>
+                                <div class="front-post-more">
+                                    <a href="{{url}}" class="btn btn-raised btn-primary right">Read more<div class="ripple-container"></div></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            
+        </article>
+    </main>
+{{/foreach}}
+
+{{! Blog pagination }}
+{{#if pagination}}{{pagination}}{{/if}}
+
+</div> {{!end of container}}

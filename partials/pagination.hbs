@@ -1,0 +1,22 @@
+<div class="row post-navigation">
+    <div class="col-md-6 col-md-offset-3 btn-group-sm">
+        {{#if prev}}
+        <a href="{{page_url prev}}" class="left">
+            <button class="btn btn-primary btn-fab">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            Newer                    
+        </a>
+        {{else}}
+        {{/if}}
+        {{#if next}}
+        <a href="{{page_url next}}" class="right">
+            Older
+            <button class="btn btn-primary btn-fab">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+        {{else}}
+        {{/if}}
+    </div>
+</div>
