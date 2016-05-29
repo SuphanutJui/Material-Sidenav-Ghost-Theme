@@ -4,7 +4,7 @@ A Ghost blogging-platform theme, based on Bootstrap 3, Jasny-Bootstrap and Boots
 For the demo please visit my own blog: [https://www.suphanutjui.com](https://www.suphanutjui.com)
 
 
-# Material Sidenav Ghost 0.5 Beta
+# Material Sidenav Ghost
 
 ### Note
 
