@@ -20,6 +20,7 @@ As I said, this theme is made for my blog, so the fonts there is for my language
 
 Download(clone) the respository, put it in ghost/content/themes.
 Then restart your Ghost and select "Material Sidenav" 
+Don't forget to enable "Public API" to make "Tag Cloud" works.
 
 ### Customization
 
