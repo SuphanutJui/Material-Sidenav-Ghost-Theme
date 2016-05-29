@@ -12,7 +12,8 @@
         <meta name="description" content="{{meta_description}}" />
         <meta name="theme-color" content="#263238">
         {{!style}}
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300">
+        <link rel="stylesheet" type="text/css" href="{{asset "assets/css/animate.min.css"}}">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,500">
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link href='https://fonts.googleapis.com/css?family=Kanit:300&subset=thai,latin' rel='stylesheet' type='text/css'>
         <link href="{{asset "assets/css/bootstrap.min.css"}}" rel="stylesheet">
@@ -20,7 +21,6 @@
         <link rel="stylesheet" type="text/css" href="{{asset "assets/css/bootstrap-material-design.min.css"}}">
         <link rel="stylesheet" type="text/css" href="{{asset "assets/css/ripples.min.css"}}">
         <link rel="stylesheet" type="text/css" href="{{asset "assets/css/font-awesome.min.css"}}">
-        <link rel="stylesheet" type="text/css" href="{{asset "assets/css/animate.min.css"}}">
         
         <!-- Custom styles for this template -->
         <link href="{{asset "assets/css/style.min.css"}}" rel="stylesheet">
@@ -30,13 +30,13 @@
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+        {{! Social Meta Tags}}
         {{! Ghost header injection }}
         {{ghost_head}}
     </head>
 
 
     <body class="{{body_class}}">
-    
     {{! Blog navbar }}
         <div class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
             <div class="nav-wrapper container">
@@ -53,16 +53,16 @@
                     </ul>
                     <div class="navmenu-social">
                        {{!Nav Social Button}}
-                        <a href="https://www.facebook.com/suphanutjui" class="btn btn-default btn-fab">
+                        <a href="#" class="btn btn-default btn-fab">
                             <i class="fa fa-facebook" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.twitter.com/SuphanutJui" class="btn btn-default btn-fab">
+                        <a href="#" class="btn btn-default btn-fab">
                             <i class="fa fa-twitter" aria-hidden="true"></i>
                         </a>
-                        <a href="mailto:suphanutjui@gmail.com" class="btn btn-default btn-fab">
+                        <a href="#" class="btn btn-default btn-fab">
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                         </a>
-                        <a href="https://github.com/SuphanutJui" class="btn btn-default btn-fab">
+                        <a href="#" class="btn btn-default btn-fab">
                             <i class="fa fa-github" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -76,7 +76,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">{{@blog.title}}</a>
+            <a class="navbar-brand" href="{{@blog.url}}">{{@blog.title}}</a>
         </div>
 
     {{! Content }}
@@ -90,6 +90,8 @@
                     <div class="col-md-4">
                         <h3>{{@blog.title}}</h3>
                         <p>{{@blog.description}}</p>
+                        <h3>About</h3>
+                        <p>Suphanut Aneknumwong is Thai high-school students. Currently preparing for the university. I love to read novel and politics. I'm not web developer but I just can code the web a bit. Using Galaxy SIII with CM13 nightlies. :)</p> 
                     </div>
                     {{!Tag Cloud}}
                     <div class="col-md-4">
@@ -104,9 +106,7 @@
                     </div>
                     {{!Twitter Embed}}
                     <div class="col-md-4">
-                        <h3><i class="fa fa-twitter" aria-hidden="true"></i> Twitter !EDIT IT</h3>
-                        <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/SuphanutJui" data-widget-id="728460610090893313">Tweets by @SuphanutJui</a>
-                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>        
+                        <h3><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</h3>     
                     </div>
                 </div>
             </div>
