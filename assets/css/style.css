@@ -118,6 +118,10 @@ blockquote {
     background-color: #263238;
 }
 
+.navmenu-social {
+    text-align: center;
+}
+
 /*front page post*/
 
 .container-fluid .row {
