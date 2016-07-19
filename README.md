@@ -1,45 +1,41 @@
 # Material-Sidenav-Ghost-Theme
-A Ghost blogging-platform theme, based on Bootstrap 3, Jasny-Bootstrap and Bootstrap Material. 
+A Ghost blogging-platform theme, based on [Materialize 0.97.6](http://materializecss.com/)
 
 For the demo please visit my own blog: [https://www.suphanutjui.com](https://www.suphanutjui.com)
-
 
 # Material Sidenav Ghost
 
 ### Note
 
-This theme is made for my personal blog, so the infomation there is mine. Please change it yourself! Also, I will keep updating but  I will not support for any issues.
+**What you have to edit:** 
+1. Social links which are on side navigation.
+2. About section on the footer.
+
+I have copied just some of the codes from FontAwesome and Animate.css which are neccesary for rendering webpage, so if you want to use another animations or icons, you have to include the stylesheets back into default.hbs.
+
 Please feel free to edit this theme.
 
-This theme is based on many frameworks: Bootstrap 3, Jasny Bootstrap 3 and Bootstrap Material so it's not really light-weighted.
-Animation isn't really good at all but I will fix it as soon as possible.
-
-As I said, this theme is made for my blog, so the fonts there is for my language (Thai). If you want to change, it's ok but you have to change the font size as well!
+This theme is based on Materialize framework, animation from animate.css and my own code so it's not light-weighted theme. Also, animation doesn't seem to work smoothly but when I have time and passion, it will be fixed. :D
 
 ### Installation
 
 Download(clone) the respository, put it in ghost/content/themes.
 
-Then restart your Ghost and select "Material Sidenav" .
-
-Don't forget to enable "Public API" to make "Tag Cloud" works.
+Then restart your Ghost and select "Material Sidenav" in your "General" page of the settings.
 
 ### Customization
 
-There's 2 custom stylesheets, one is minified and one isn't. Minified version is quite hard to edit so you can edit the unminified version and miniy it later.
+There will be 2 versions of stylesheet for you; minified and unminified stylesheet. So, you have to edit unminified version and minify it respectively.
 
 ### Frameworks
 
-* [Bootstrap 3](http://getbootstrap.com/)
-* [Jasny Bootstrap](http://www.jasny.net/bootstrap/)
-* [Material Bootstrap](http://fezvrasta.github.io/bootstrap-material-design/)
+* [Materialize 0.97.6](http://materializecss.com/)
 * [Animate.css](https://daneden.github.io/animate.css/)
 * [JQuery](https://jquery.com/)
 
 ####Fonts & Icons
 
-* Kanit
-* THSarabun New
+* Roboto
 * FontAwesome
 * Material Font
 
