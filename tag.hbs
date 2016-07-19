@@ -1,73 +1,59 @@
 {{!< default}}
-
-{{!Tag Title}}
-    <div class="tag-title">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <h2><i class="fa fa-hashtag" aria-hidden="true"></i> Tag: {{tag.name}}</h2>
+        <main>
+            <div class="tag-title blue-grey darken-3 white-text">
+                <div class="row">
+                    <div class="col m8 offset-m2">
+                        <h2><i class="fa fa-hashtag" aria-hidden="true"></i> Tag: {{tag.name}}</h2>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-    {{#foreach posts}}
-        <main class="row">
-           
-            <article class="front-wrapper col-md-8 col-md-offset-2 jumbotron animated" role="article">
-                       
-                <div class="cover-area"> {{!cover image}}
-                    <div class="cover-img">
-                        <a href="{{url}}"><img src="{{image}}"></a>
-                    </div>
-                </div>
-                
-                <div class="front-post">
-                    <div class="container-fluid">
-                        <div class="row">
-                           
-                            <div class="front-post-content">
-                                <div class="front-post-wrapper">
-                                    <div class="front-post-header">
-                                        <div class="front-post-meta"> {{!post meta}}
-                                            <div class="front-post-tag">
-                                                <i class="fa fa-hashtag" aria-hidden="true"></i>
-                                                {{#foreach tags}}
-                                                <a href="{{url}}" title="{{name}}">{{name}}</a>
-                                                {{/foreach}}
-                                            </div>
-                                            {{!time}}
-                                            <time class="front-post-date" datetime="{{date format='YYYY-MM-DD'}}"><i class="material-icons">&#xE192;</i> 
-                                            {{date format='YYYY-MM-DD'}}
-                                            </time>
-                                        </div>
-                                        <h2 class="front-post-title" itemprop="headline">
-                                            <a href="{{url}}">{{title}}</a>
-                                        </h2>
-                                    </div>
-                                    <div class="front-post-p"> {{!post description}}
-                                        <p>
-                                            {{excerpt words="50"}}&hellip;
-                                        </p>
-                                    </div>
-                                    <div class="front-post-more"> {{! Read more Button}}
-                                        <a href="{{url}}" class="btn btn-raised btn-primary right">
-                                        Read more
-                                        <div class="ripple-container"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            
+            {{#foreach posts}}
+            <div class="row">
+                <div class="card-front animated col s12 m12 l8 offset-l2">
+                    <article class="card">
+                        {{!Cover Image}}
+                        <div class="card-image">
+                            <a href="{{url}}"><img src="{{image}}"></a>
                         </div>
-                    </div>
-                </div> {{! end of front-post}}
-                
-            </article>
-            
+                        <div class="card-content">
+                            <div class="card-header">
+                                {{!post meta (time posted, tags)}}
+                                <div class="card-meta blue-grey-text text-lighten-2">
+                                    <div class="card-tag"> {{!Tag}}
+                                        <i class="fa fa-hashtag" aria-hidden="true"></i>
+                                        {{#foreach tags}}
+                                            <a href="{{url}}" title="{{name}}" class="blue-grey-text text-lighten-2">{{name}}</a>
+                                        {{/foreach}}
+                                    </div>
+                                    <time class="card-date" datetime="{{date format='YYYY-MM-DD'}}">
+                                        <i class="material-icons">&#xE192;</i> 
+                                        {{date format='YYYY-MM-DD'}}
+                                    </time>
+                                </div>
+                                {{!Post Title}}
+                                <h2 class="card-title">
+                                    <a href="{{url}}">{{title}}</a>
+                                </h2>
+                            </div>
+                            {{!Post Content with limitation of 50 words}}
+                            <p>{{excerpt words="50"}}&hellip;</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" class="btn-floating fb" data-width="580" height="235">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}" class="btn-floating tw" data-width="580" height="235">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://plus.google.com/share?url={{url absolute="true"}}" class="btn-floating gp" data-width="580" height="235">
+                                <i class="fa fa-google-plus" aria-hidden="true"></i>
+                            </a>
+                            <a class="waves-effect waves-light btn right" href="{{url}}">read more</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            {{/foreach}}
+            {{! Blog pagination }}
+            {{#if pagination}}{{pagination}}{{/if}}
         </main>
-    {{/foreach}}
-    {{! Blog pagination }}
-    {{#if pagination}}{{pagination}}{{/if}}
-    
-    </div> {{!end of container}}

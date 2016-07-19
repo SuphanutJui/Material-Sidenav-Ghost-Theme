@@ -1,6 +1,17 @@
+(function($){
+  $(function(){
+
+    $('.button-collapse').sideNav({
+        menuWidth: 350, 
+        }
+    );
+        
+  }); 
+})(jQuery); 
+
 $(document).ready(function() {
       
-var $animation_elements = $('.front-wrapper');
+var $animation_elements = $('.card-front');
 var $window = $(window);
 
 function check_if_in_view() {
@@ -43,5 +54,3 @@ $window.trigger('scroll');
     }
   
 });
-
-
