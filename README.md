@@ -7,25 +7,25 @@ For the demo please visit my own blog: [https://www.suphanutjui.com](https://www
 
 ### Note
 
-**What you have to edit:** 
-1. Social links which are on side navigation.
-2. About section on the footer.
+**Here's what you have to edit:** 
+1. Links which are on side navigation.
+2. 'About' section on a footer.
 
 I have copied just some of the codes from FontAwesome and Animate.css which are neccesary for rendering webpage, so if you want to use another animations or icons, you have to include the stylesheets back into default.hbs.
 
-Please feel free to edit this theme.
+Also, this theme have been made for Thai language, so font size might not be optimized for English. Please feel free to edit this theme.
 
 This theme is based on Materialize framework, animation from animate.css and my own code so it's not light-weighted theme. Also, animation doesn't seem to work smoothly but when I have time and passion, it will be fixed. :D
 
 ### Installation
 
-Download(clone) the respository, put it in ghost/content/themes.
+Download (or clone) the respository, put it in ghost/content/themes.
 
 Then restart your Ghost and select "Material Sidenav" in your "General" page of the settings.
 
 ### Customization
 
-There will be 2 versions of stylesheet for you; minified and unminified stylesheet. So, you have to edit unminified version and minify it respectively.
+There will be 2 versions of stylesheet for you; minified and unminified stylesheet. So, you have to edit unminified version and minify it respectively. Or, if you prefer to edit minified version, it's probably fine. :)
 
 ### Frameworks
 
