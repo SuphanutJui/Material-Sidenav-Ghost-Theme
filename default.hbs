@@ -17,9 +17,9 @@
         {{ghost_head}}
         <script>
             {{> custom/config}}
-            window.CASPERCUST = {};
-            CASPERCUST.haveGA = typeof ga_ua !== 'undefined' && ga_ua !== 'UA-XXXXX-X';
-            CASPERCUST.haveDisqus = typeof disqus_shortname !== 'undefined' && disqus_shortname !== '';
+            window.CUSTVARS = {};
+            CUSTVARS.haveGA = typeof ga_ua !== 'undefined' && ga_ua !== 'UA-XXXXX-X';
+            CUSTVARS.haveDisqus = typeof disqus_shortname !== 'undefined' && disqus_shortname !== '';
         </script>
     </head>
     <body class="{{body_class}}">
@@ -86,7 +86,7 @@
         {{! Ghost body injection }}
         {{ghost_foot}}
         <script>
-          if(CASPERCUST.haveGA) {
+          if(CUSTVARS.haveGA) {
             (function(g,h,o,s,t,z){g.GoogleAnalyticsObject=s;g[s]||(g[s]=
               function(){(g[s].q=g[s].q||[]).push(arguments)});g[s].s=+new Date;
               t=h.createElement(o);z=h.getElementsByTagName(o)[0];
@@ -95,7 +95,7 @@
             ga('create',ga_ua);ga('send','pageview');
           }
 
-          if(CASPERCUST.haveDisqus) {
+          if(CUSTVARS.haveDisqus) {
             (function () {
               var s = document.createElement('script'); s.async = true;
               s.type = 'text/javascript';
